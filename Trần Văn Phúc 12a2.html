@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mắt Biếc - Thanh Xuân Thời Học Sinh</title>
+    <!-- Tải Tailwind CSS để đảm bảo giao diện đẹp và responsive -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Tải font Inter từ Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        /* Định nghĩa biến CSS tùy chỉnh cho tông màu Hoài niệm Biển Mây */
+        :root {
+            --color-deep-sea: #004e89;    /* Xanh Biển Sâu (Primary) */
+            --color-sky-blue: #8ecae6;    /* Xanh Bầu Trời (Secondary) */
+            --color-cloud-white: #f0f7f9; /* Trắng Mây Nhạt (Light Background) */
+            --color-text-dark: #003049;   /* Xanh Đậm (Text Color) */
+            --color-accent-wave: #219ebc; /* Xanh Sóng Biển (Accent) */
+            --font-primary: 'Inter', sans-serif;
+        }
+
+        /* Áp dụng font và màu nền cho toàn bộ trang */
+        body {
+            font-family: var(--font-primary);
+            color: var(--color-text-dark);
+            line-height: 1.7;
+            
+            /* Tông màu nền xanh gradient mây trời (thay thế họa tiết URL) */
+            background-color: var(--color-cloud-white);
+            /* Linear Gradient mô phỏng sự chuyển đổi màu sắc từ biển lên trời */
+            background-image: linear-gradient(to top, #c1dce9 0%, #e8f4fa 50%, #f0f7f9 100%); 
+            background-attachment: fixed; 
+            background-size: cover;
+        }
+
+        /* Container chính */
+        .container-wrapper {
+            background-color: rgba(255, 255, 255, 0.98); /* Trắng gần như tuyệt đối, nổi bật nội dung */
+        }
+
+        /* Hiệu ứng cho tiêu đề phụ */
+        h2 {
+            /* Đổi sang màu xanh Sóng Biển nổi bật */
+            border-left: 5px solid var(--color-accent-wave);
+            padding-left: 1rem;
+        }
+        
+        /* Cập nhật màu tiêu đề chính */
+        header h1 {
+            color: var(--color-deep-sea) !important;
+            text-shadow: 2px 2px 4px rgba(0, 78, 137, 0.2); /* Shadow rõ hơn */
+        }
+
+        /* Tăng cường hiệu ứng cho khối trích dẫn */
+        blockquote {
+            transition: all 0.4s ease;
+            background-color: #e0f2fe; /* Nền xanh nhạt, mờ như mây */
+            border-left-color: var(--color-deep-sea) !important; /* Viền xanh biển sâu */
+            /* Tạo sóng nước nhẹ cho trích dẫn */
+            box-shadow: 0 4px 12px rgba(0, 78, 137, 0.1); 
+            border-radius: 0.5rem 0.5rem 0.5rem 0.5rem; 
+        }
+
+        blockquote:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 78, 137, 0.2);
+        }
+
+        /* Custom style for fun fact list marker */
+        .fun-fact-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-text-dark);
+        }
+
+        .fun-fact-list li::before {
+            content: '🌊'; /* Dùng emoji sóng biển làm marker */
+            position: absolute;
+            left: 0;
+            color: var(--color-accent-wave);
+        }
+
+        /* CSS TÙY CHỈNH MỚI: Làm đẹp chữ "Mắt Biếc" */
+        .beautiful-title {
+            color: var(--color-deep-sea) !important; 
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 5px rgba(0, 78, 137, 0.15); 
+            transition: color 0.3s ease;
+        }
+
+        .beautiful-title:hover {
+            color: var(--color-accent-wave) !important; 
+        }
+
+        /* Cập nhật màu cho thẻ aside/thông tin thú vị */
+        .fun-fact {
+            border-color: var(--color-sky-blue) !important;
+            background-color: var(--color-cloud-white); /* Nền mây */
+            box-shadow: 0 2px 10px rgba(142, 202, 230, 0.5); /* Shadow màu trời */
+        }
+
+        /* Cập nhật màu cho ảnh bìa */
+        .book-intro img {
+            border-color: var(--color-accent-wave) !important; /* Viền màu sóng biển */
+        }
+        
+        /* Cảm nhận cá nhân (bg-indigo-50) */
+        section:nth-of-type(2) p.italic {
+             background-color: #e9f5ff; /* Tông màu xanh nhạt hơn indigo 50 */
+             border-left-color: var(--color-sky-blue) !important;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Container chính giữa màn hình, dùng shadow và rounded corners -->
+    <div class="container-wrapper container mx-auto p-4 sm:p-8 shadow-2xl rounded-xl mt-8 mb-8 max-w-4xl">
+
+        <!-- HTML Semantic: <header> - Phần đầu trang -->
+        <header class="text-center pb-6 mb-8 border-b-4 border-blue-200">
+            <h1 class="text-4xl sm:text-5xl font-extrabold" style="color: var(--color-deep-sea);">
+                TRANG WEB GIỚI THIỆU TÁC PHẨM VĂN HỌC
+            </h1>
+            <p class="text-xl mt-2 italic" style="color: var(--color-deep-sea);">Chủ đề: Thanh Xuân Thời Học Sinh - Tác phẩm: Mắt Biếc</p>
+        </header>
+
+        <!-- HTML Semantic: <main> - Nội dung chính -->
+        <main>
+            <!-- HTML Semantic: <section> - Giới thiệu tác phẩm và ảnh bìa -->
+            <section class="book-intro mb-8 flex flex-col md:flex-row items-center gap-6">
+                
+                <!-- Ảnh bìa sách (Yêu cầu 1 & 2: Tên tác phẩm + Ảnh bìa) -->
+                <div class="w-full md:w-1/3 flex-shrink-0">
+                    <img 
+                        src="https://www.nxbtre.com.vn/Images/Book/nxbtre_full_01372019_043734.jpg" 
+                        alt="Ảnh bìa sách Mắt Biếc" 
+                        class="w-full h-auto object-cover rounded-lg shadow-lg border-4" 
+                        style="border-color: var(--color-accent-wave);"
+                    >
+                </div>
+
+                <!-- Thông tin cơ bản -->
+                <div class="w-full md:w-2/3">
+                    <p class="beautiful-title font-bold mb-1" style="color: var(--color-text-dark);">
+                        "Mắt Biếc" - NGUYỄN NHẬT ÁNH
+                    </p>
+                    <p class="text-lg"><strong>Tác giả:</strong> Nguyễn Nhật Ánh</p>
+                    <p class="text-lg mt-2"><strong>Chủ đề:</strong> Tình yêu đơn phương, tuổi học trò, hoài niệm, sự thay đổi giữa thành thị và nông thôn.</p>
+                </div>
+            </section>
+
+            <!-- HTML Semantic: <article> - Tóm tắt và cảm nhận cá nhân -->
+            <article class="space-y-8 mb-8">
+                
+                <!-- Yêu cầu 3: Tóm tắt nội dung (5-10 dòng) -->
+                <section>
+                    <h2 class="text-2xl font-semibold mb-4" style="color: var(--color-deep-sea);">Tóm Tắt Nội Dung Tác Phẩm</h2>
+                    <p class="text-justify">
+                        "Mắt Biếc" kể về mối tình đơn phương, đầy khắc khoải và dịu dàng của "Ngạn" dành cho cô bạn thuở nhỏ có đôi mắt tuyệt đẹp tên là "Hà Lan". Họ lớn lên cùng nhau ở ngôi làng Đo Đo yên bình, rồi cùng nhau lên thành phố học. Cuộc sống nơi thành thị đã thay đổi Hà Lan, khiến cô trở nên hiện đại, thực dụng hơn và không thể đáp lại tình cảm sâu sắc của Ngạn. Dù Ngạn luôn dõi theo, yêu thương và chờ đợi, nhưng Hà Lan vẫn tìm kiếm những điều mới mẻ, để lại mình Ngạn với nỗi buồn man mác và ký ức về đôi mắt biếc không bao giờ thuộc về anh.
+                    </p>
+                </section>
+
+                <!-- Yêu cầu 4: Cảm nhận cá nhân (3-5 dòng) -->
+                <section>
+                    <h2 class="text-2xl font-semibold mb-4" style="color: var(--color-deep-sea);">Cảm Nhận Cá Nhân</h2>
+                    <p class="text-justify italic bg-indigo-50 p-4 rounded-lg border-l-4" style="border-color: var(--color-sky-blue);">
+                        "Mắt Biếc" không chỉ là một câu chuyện tình yêu mà còn là một tấm vé trở về tuổi học trò trong veo, đầy ắp những rung động đầu đời. Tác phẩm khắc họa thành công sự khác biệt giữa hai thế giới: sự chân thành, mộc mạc của làng quê và sự xô bồ, đổi thay của thành thị. Đọc sách, ta như thấy lại chính mình của những năm tháng cũ, với một chút ngây thơ, một chút nuối tiếc và một tình yêu chỉ có thể gọi tên là "thương mến".
+                    </p>
+                </section>
+            </article>
+
+            <!-- Yêu cầu 5: Có hộp trích dẫn hay (HTML Semantic: <blockquote>) -->
+            <section class="quote-section mb-8">
+                <h2 class="text-2xl font-semibold mb-4" style="color: var(--color-deep-sea);">Trích Dẫn Hay: </h2>
+                <blockquote class="p-6 rounded-r-xl shadow-md border-l-8 border-gray-400" style="border-color: var(--color-deep-sea);">
+                    <p class="text-xl font-medium mb-2">
+                        "Tôi sẽ đợi. Tôi sẽ đợi cậu ấy đến khi không thể đợi được nữa thì thôi."
+                    </p>
+                    <footer class="text-sm italic text-right text-gray-600">
+                        — Một câu nói thể hiện sự chung tình, day dứt của Ngạn.
+                    </footer>
+                </blockquote>
+            </section>
+
+            <!-- Yêu cầu 4: Thông tin thú vị (HTML Semantic: <aside>) -->
+            <aside class="fun-fact p-6 rounded-lg border-2 border-dashed" style="border-color: var(--color-sky-blue); background-color: var(--color-cloud-white);">
+                <h2 class="text-xl font-semibold mb-4" style="color: var(--color-deep-sea);">💡 Thông Tin Thú Vị </h2>
+                <ul class="fun-fact-list text-gray-700">
+                    <li>Tác phẩm được xuất bản lần đầu vào năm "1990", trở thành một trong những tác phẩm kinh điển về tuổi học trò của Nguyễn Nhật Ánh.</li>
+                    <li>Năm 2019, "Mắt Biếc" được chuyển thể thành bộ phim điện ảnh cùng tên và đã đạt doanh thu kỷ lục tại phòng vé.</li>
+                    <li>Nhân vật "Ngạn" có sở trường chơi đàn guitar, và những bản nhạc anh viết cho Hà Lan là một phần quan trọng tạo nên sự lãng mạn, day dứt của câu chuyện.</li>
+                </ul>
+            </aside>
+        </main>
+
+        <!-- HTML Semantic: <footer> - Cuối trang -->
+        <footer class="text-center pt-6 mt-8 border-t-2 border-blue-200">
+            <p class="text-sm text-gray-500">
+                © 2025 Trang Web Cá nhân: @vphuc8002@gmail.com
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
